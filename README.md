@@ -1,6 +1,5 @@
-![Static Badge](https://img.shields.io/badge/Technology-Kotlin-8A2BE2?style=for-the-badge&logo=kotlin) ![Lines of code](https://tokei.rs/b1/github/Lewan24/GymBuddy?style=for-the-badge)<br>
-![Github Created At](https://img.shields.io/github/created-at/Lewan24/GymBuddy?style=for-the-badge)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Lewan24/GymBuddy?style=for-the-badge)<br>
+![Static Badge](https://img.shields.io/badge/Technology-Kotlin-8A2BE2?style=for-the-badge&logo=kotlin) ![Github Created At](https://img.shields.io/github/created-at/Lewan24/GymBuddy?style=for-the-badge)<br>
+![Lines of code](https://tokei.rs/b1/github/Lewan24/GymBuddy?style=for-the-badge) ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Lewan24/GymBuddy?style=for-the-badge)<br>
 ![GitHub Release](https://img.shields.io/github/v/release/Lewan24/GymBuddy?style=for-the-badge)<br><br>
 ![GitHub Repo stars](https://img.shields.io/github/stars/Lewan24/GymBuddy) <br>
 
