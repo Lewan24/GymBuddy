@@ -50,7 +50,7 @@
 <!-- &#x2610; checkbox empty
      &#x2705; checkbox full green
 -->
-- &#x2610; Create first initialization of project → 01 March<br>
+- &#x2705; Create first initialization of project → 01 March<br>
 - &#x2610; First preview project for main functions → 02 March<br>
 - &#x2610; Prepare few most important functions, classes, models → 03 March<br>
 - &#x2610; Prepare Infrastructure project (preview) → 05 March<br><br>
