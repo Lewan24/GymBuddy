@@ -1,9 +1,9 @@
-![Static Badge](https://img.shields.io/badge/Technology-Kotlin-8A2BE2)
+![Static Badge](https://img.shields.io/badge/Technology-Kotlin-8A2BE2) 
 ![Github Created At](https://img.shields.io/github/created-at/Lewan24/GymBuddy)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Lewan24/GymBuddy)
+![GitHub Repo stars](https://img.shields.io/github/stars/Lewan24/GymBuddy) <br>
+![GitHub Release](https://img.shields.io/github/v/release/Lewan24/GymBuddy)<br>
 ![Lines of code](https://img.shields.io/tokei/lines/github/Lewan24/GymBuddy)
-![GitHub Release](https://img.shields.io/github/v/release/Lewan24/GymBuddy)
-![GitHub Repo stars](https://img.shields.io/github/stars/Lewan24/GymBuddy)
 
 <h1 align="center">\--_GymBuddy_--/<br>personal training helper/tracker</h1>
 
