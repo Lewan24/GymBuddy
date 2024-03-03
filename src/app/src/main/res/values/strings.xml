@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">GymBuddy</string>
+    <string name="open_nav">Open Menu</string>
+    <string name="close_nav">Close Menu</string>
+    <string name="nav_homeText">Home</string>
+    <string name="nav_trainingsText">Trainings</string>
+    <string name="nav_trainings_historyText">Trainings History</string>
+    <string name="nav_weightText">Weight\n</string>
+    <string name="nav_figureText">Figure</string>
+    <string name="nav_exercieDbText">Exercises Database</string>
+    <string name="nav_aboutText">About app</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="co.vecmocon.MainActivity">
+
+    <item
+        android:id="@+id/nav_Home"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="@string/nav_homeText" />
+    <item
+        android:id="@+id/nav_Trainings"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="@string/nav_trainingsText" />
+    <item
+        android:id="@+id/nav_Weight"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="@string/nav_weightText" />
+    <item
+        android:id="@+id/nav_Figure"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="@string/nav_figureText" />
+    <item
+        android:id="@+id/nav_History"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="@string/nav_trainings_historyText" />
+    <item
+        android:id="@+id/nav_ExercisesDb"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="@string/nav_exercieDbText" />
+    <item
+        android:id="@+id/nav_about"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="@string/nav_aboutText" />
+</menu>

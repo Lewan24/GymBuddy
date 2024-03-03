@@ -1,46 +1,76 @@
 package com.example.gymbuddy
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.gymbuddy.ui.theme.GymBuddyTheme
+import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import com.example.gymbuddy.pages.AboutUsFragment
+import com.example.gymbuddy.pages.ExercisesDbFragment
+import com.example.gymbuddy.pages.FigureFragment
+import com.example.gymbuddy.pages.TrainingsHistoryFragment
+import com.example.gymbuddy.pages.HomeFragment
+import com.example.gymbuddy.pages.TrainingsFragment
+import com.example.gymbuddy.pages.WeightFragment
+import com.google.android.material.navigation.NavigationView
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+    private lateinit var drawerLayout: DrawerLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            GymBuddyTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+        setContentView(R.layout.fragment_main)
+
+        drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
+
+        var toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
+        val navigationView = findViewById<NavigationView>(R.id.nav_view)
+        navigationView.setNavigationItemSelectedListener(this)
+
+        val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav)
+
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, HomeFragment()).commit()
+            navigationView.setCheckedItem(R.id.nav_Home)
         }
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_Home -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, HomeFragment()).commit()
+            R.id.nav_Trainings -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, TrainingsFragment()).commit()
+            R.id.nav_History -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, TrainingsHistoryFragment()).commit()
+            R.id.nav_Weight -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, WeightFragment()).commit()
+            R.id.nav_Figure -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, FigureFragment()).commit()
+            R.id.nav_ExercisesDb -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, ExercisesDbFragment()).commit()
+            R.id.nav_about -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, AboutUsFragment()).commit()
+        }
+        drawerLayout.closeDrawer(GravityCompat.START)
+        return true
+    }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    GymBuddyTheme {
-        Greeting("Android")
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        super.onBackPressed()
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            onBackPressedDispatcher.onBackPressed()
+        }
     }
 }

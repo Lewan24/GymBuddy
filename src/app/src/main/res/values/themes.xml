@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="Theme.GymBuddy" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.MainActivity" parent="Theme.AppCompat.DayNight">
+        <!-- Primary brand color. -->
+        <item name="android:colorPrimary">@color/purple_default</item>
+        <item name="android:statusBarColor">@color/purple_default</item>
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>
