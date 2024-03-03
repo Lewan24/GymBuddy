@@ -49,7 +49,7 @@
      &#x2705; checkbox full green
 -->
 - &#x2705; Create first initialization of project → 01 March<br>
-- &#x2610; Prepare preview of files structure. Create first few preview pages and main menu → 02 March<br>
+- &#x2705; Prepare preview of files structure. Create first few preview pages and main menu → 02 March<br>
 - &#x2610; Prepare needed classess, services and interfaces for trainings → 03-05 March<br>
 - &#x2610; Create database for storing data // Room → 05 March<br>
 - &#x2610; Prepare Infrastructure project (preview) → 06-07 March<br>
