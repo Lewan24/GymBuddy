@@ -9,9 +9,7 @@
     <string name="nav_figureText">Figure</string>
     <string name="nav_exercieDbText">Exercises Database</string>
     <string name="nav_aboutText">About app</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="logo">Logo</string>
-    <string name="home_welcome_string">Hi There! Welcome in GymBuddy - your personal trainings buddy</string>
-    <string name="start_new_training_button_text">Start new Training</string>
+    <string name="home_welcome_string">Hi There! Welcome in GymBuddy - your personal training buddy</string>
+    <string name="start_new_training_button_text">Let\'s train!</string>
 </resources>

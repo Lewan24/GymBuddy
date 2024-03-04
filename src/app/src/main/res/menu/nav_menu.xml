@@ -8,31 +8,31 @@
 <!--     Todo: Check icons and add neccessary icons to project and implement into menu   -->
         <item
             android:id="@+id/nav_Home"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/baseline_home_24"
             android:title="@string/nav_homeText" />
         <item
             android:id="@+id/nav_Trainings"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/dumbell3"
             android:title="@string/nav_trainingsText" />
         <item
             android:id="@+id/nav_Weight"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/weightloss"
             android:title="@string/nav_weightText" />
         <item
             android:id="@+id/nav_Figure"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/figure"
             android:title="@string/nav_figureText" />
         <item
             android:id="@+id/nav_History"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/baseline_history_24"
             android:title="@string/nav_trainings_historyText" />
         <item
             android:id="@+id/nav_ExercisesDb"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/baseline_api_24"
             android:title="@string/nav_exercieDbText" />
         <item
             android:id="@+id/nav_about"
-            android:icon="@drawable/information"
+            android:icon="@drawable/baseline_info_24"
             android:title="@string/nav_aboutText" />
     </group>
 </menu>

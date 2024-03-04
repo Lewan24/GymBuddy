@@ -7,5 +7,6 @@
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:fontFamily">@font/default_font_family</item>
     </style>
 </resources>
