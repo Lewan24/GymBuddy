@@ -3,14 +3,7 @@
 ![GitHub Release](https://img.shields.io/github/v/release/Lewan24/GymBuddy?style=for-the-badge)<br><br>
 ![GitHub Repo stars](https://img.shields.io/github/stars/Lewan24/GymBuddy) <br>
 
-```
-   ______                ____            __    __     
-  / ____/_  ______ ___  / __ )__  ______/ /___/ /_  __
- / / __/ / / / __ `__ \/ __  / / / / __  / __  / / / /
-/ /_/ / /_/ / / / / / / /_/ / /_/ / /_/ / /_/ / /_/ / 
-\____/\__, /_/ /_/ /_/_____/\__,_/\__,_/\__,_/\__, /  
-     /____/                                  /____/   
-```
+![App logo](https://github.com/Lewan24/GymBuddy/blob/main/Resources/GymBuddy-Logo.png)
 
 <h1 align="center">&#x1F4F2; personal training helper/tracker</h1>
 
