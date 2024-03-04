@@ -1,15 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pages.HomeFragment">
+    tools:context=".pages.HomeFragment"
+    android:background="@color/dark">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="145dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/gymbuddy_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
+        android:id="@+id/tvWelcome"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello from home!"
-        android:textSize="24sp"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/home_welcome_string"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btnStartTraining"
+        style="@style/ButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/start_new_training_button_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
+
+    <TextView
+        android:id="@+id/tvLastTrainingStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your last training: (Example)"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:layout_marginTop="80dp"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartTraining" />
+
+    <TextView
+        android:id="@+id/tvLastTrainingStats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Time: 1h 28m\n\nExercises: 11\nTotal kg: 4340 kg\nAvg %CM: 60%"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:textSize="22sp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLastTrainingStart" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
