@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "UserSettings")
-data class UserSettings(
+@Entity(tableName = "ArchivedTrainings")
+data class ArchivedTrainingModel(
     @PrimaryKey @ColumnInfo(name="Id") val id: Int = 0
 )
