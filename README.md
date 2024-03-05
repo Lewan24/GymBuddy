@@ -34,7 +34,7 @@
 - &#x2610; Statistics page<br>
 - &#x2610; Database with exercises (Check exercise, it's title, description, image or video how to do this exercise, advices etc.)<br><br>
 
-<h3 align="left"># Roadmap #</h3>
+<h3 align="left"># Roadmap - Work Plans (updated when item is completed) #</h3>
 
 > [!NOTE]
 > <p>checkbox / Target → Expected completion date</p>
@@ -45,8 +45,18 @@
 - &#x2705; Prepare preview of files structure. Create first few preview pages and main menu → 02 March<br>
 - &#x2705; Prepare needed classess, services and interfaces for trainings → 03-05 March<br>
 - &#x2705; Create database for storing data // Room → 05 March<br>
-- &#x2610; Prepare Infrastructure project (preview) → 06-07 March<br>
-- &#x2610; Find personal trainer to get some important information for application → 08-10 March<br><br>
+- &#x2610; Update models with some proeprties → 05-06 March<br>
+- &#x2610; Implement some static prepared data to database → 07-08 March<br>
+- &#x2610; Prepare Infrastructure project (preview in draw.io) → 09-10 March<br>
+- &#x2610; Find personal trainer to get some important information for application → 11-17 March<br>
+- &#x2610; Implement creating training plans (selected specific exrcises, series, repetitions etc) → 13-20 March<br>
+- Other plans are now under question mark. Future updates will show next roadmap plans.
+<br>
+
+<h3 align="left"># How to run #</h3>
+<p allign="left">Actually running application is pretty easy. Just download apk file (GymBuddy.apk) from releases page (Latest stable version), then install apk on phone and enjoy :)</p>
+<p allign="left">First run could be kinda slow coz of first starting and creating database for user. Every run after the first one will be much faster.</p>
+<br>
 
 <h3 align="left"># Greetings #</h3>
 <br>
