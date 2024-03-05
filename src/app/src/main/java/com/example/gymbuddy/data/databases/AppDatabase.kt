@@ -38,7 +38,7 @@ abstract class AppDatabase : RoomDatabase() {
                         context.applicationContext,
                         AppDatabase::class.java,
                         Database_NAME
-                    ).build()
+                    ).createFromAsset("database/GymBuddy.db").build()
 
                     INSTANCE = instance
                 }
