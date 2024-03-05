@@ -1,60 +1,48 @@
 package com.example.gymbuddy.pages
 
+import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gymbuddy.R
+import com.example.gymbuddy.data.adapters.TrainingPlansAdapter
+import com.example.gymbuddy.data.viewmodels.TrainingsViewModel
+import com.example.gymbuddy.databinding.FragmentTrainingsBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [TrainingsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TrainingsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    companion object {
+        fun newInstance() = TrainingsFragment()
     }
+
+    private lateinit var viewModel: TrainingsViewModel
+    private lateinit var trainingPlansAdapter: TrainingPlansAdapter
+    private lateinit var binding: FragmentTrainingsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_trainings, container, false)
+        binding = FragmentTrainingsBinding.inflate(inflater, container, false)
+        trainingPlansAdapter = TrainingPlansAdapter()
+
+        viewModel = ViewModelProvider(this)[TrainingsViewModel::class.java]
+        viewModel.getAllTrainingPlansAsObservers().observe(viewLifecycleOwner) {
+            trainingPlansAdapter.setListData(ArrayList(it))
+            trainingPlansAdapter.setViewModel(this.viewModel)
+            trainingPlansAdapter.notifyDataSetChanged()
+        }
+
+        binding.rvTrainingPlansList.layoutManager = LinearLayoutManager(this.context)
+        binding.rvTrainingPlansList.adapter = trainingPlansAdapter
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TrainingsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TrainingsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    @Deprecated("Deprecated in Java")
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
     }
 }

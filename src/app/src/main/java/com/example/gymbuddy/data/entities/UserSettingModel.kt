@@ -6,5 +6,5 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "UserSettings")
 data class UserSetting(
-    @PrimaryKey @ColumnInfo(name="Id") val id: Int = 0
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name="Id") val id: Int = 0
 )

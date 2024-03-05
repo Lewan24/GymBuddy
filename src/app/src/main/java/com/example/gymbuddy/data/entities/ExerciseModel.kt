@@ -6,5 +6,5 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "Exercises")
 data class ExerciseModel(
-    @PrimaryKey @ColumnInfo(name="Id") val id: Int = 0
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name="Id") val id: Int = 0
 )

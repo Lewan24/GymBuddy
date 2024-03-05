@@ -12,4 +12,6 @@
     <string name="logo">Logo</string>
     <string name="home_welcome_string">Hi There! Welcome in GymBuddy - your personal training buddy</string>
     <string name="start_new_training_button_text">Let\'s train!</string>
+    <string name="delete_Button_Text">Delete</string>
+    <string name="edit_Button_Text">Edit</string>
 </resources>
