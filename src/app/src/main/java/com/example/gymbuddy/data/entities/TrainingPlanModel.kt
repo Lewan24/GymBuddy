@@ -9,5 +9,5 @@ import androidx.room.PrimaryKey
 data class TrainingPlanModel(
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name="Id") val id: Int = 0,
     @ColumnInfo(name = "TrainingName") var trainingName: String,
-    @ColumnInfo(name = "Exercises") var exercises: String?
+    @ColumnInfo(name = "ExercisesJson") var exercises: String // List<ExerciseModel>
 )
