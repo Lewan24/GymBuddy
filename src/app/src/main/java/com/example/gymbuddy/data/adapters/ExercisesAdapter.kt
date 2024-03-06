@@ -26,6 +26,8 @@ class ExercisesAdapter : RecyclerView.Adapter<ExercisesAdapter.ExerciseViewHolde
         val exerciseName: TextView = itemView.findViewById(R.id.tvExerciseName)
         val exerciseLevel: TextView = itemView.findViewById(R.id.tvLevel)
         val exerciseMuscles: TextView = itemView.findViewById(R.id.tvMuscles)
+//        val exerciseVideo: VideoView = itemView.findViewById(R.id.vvExerciseVideo)
+//        val mediaController = MediaController(itemView.context)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
@@ -46,5 +48,18 @@ class ExercisesAdapter : RecyclerView.Adapter<ExercisesAdapter.ExerciseViewHolde
         val gson = Gson()
         val exerciseMusclesAsList: List<String> = gson.fromJson<List<String>>(currentExercise.musclesUsed, List::class.java)
         "Muscles: ${exerciseMusclesAsList.joinToString(separator = ",")}".also { holder.exerciseMuscles.text = it }
+
+        // Todo: Need to check nulls and prepare catching
+        //val videoUri: Uri? = if (currentExercise.videoUrl != "") Uri.parse(currentExercise.videoUrl) else null
+
+//        val videoUri: Uri = Uri.parse(currentExercise.videoUrl)
+//
+//        holder.exerciseVideo.setVideoURI(videoUri)
+//
+//        holder.mediaController.setAnchorView(holder.exerciseVideo)
+//        holder.mediaController.setMediaPlayer(holder.exerciseVideo)
+//
+//        holder.exerciseVideo.setMediaController(holder.mediaController)
+//        holder.exerciseVideo.start()
     }
 }
