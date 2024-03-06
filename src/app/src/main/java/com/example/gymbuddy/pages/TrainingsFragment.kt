@@ -1,13 +1,12 @@
 package com.example.gymbuddy.pages
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.gymbuddy.R
 import com.example.gymbuddy.data.adapters.TrainingPlansAdapter
 import com.example.gymbuddy.data.viewmodels.TrainingsViewModel
 import com.example.gymbuddy.databinding.FragmentTrainingsBinding
@@ -24,7 +23,7 @@ class TrainingsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentTrainingsBinding.inflate(inflater, container, false)
         trainingPlansAdapter = TrainingPlansAdapter()
 

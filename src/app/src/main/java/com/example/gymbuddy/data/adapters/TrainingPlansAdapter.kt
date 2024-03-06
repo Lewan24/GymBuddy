@@ -12,6 +12,7 @@ import com.example.gymbuddy.data.viewmodels.TrainingsViewModel
 class TrainingPlansAdapter : RecyclerView.Adapter<TrainingPlansAdapter.TrainingPlanViewHolder>() {
     private lateinit var databaseViewModel: TrainingsViewModel
     var items = ArrayList<TrainingPlanModel>()
+
     fun setListData(data: ArrayList<TrainingPlanModel>){
         this.items = data
     }
