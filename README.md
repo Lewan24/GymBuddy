@@ -29,10 +29,10 @@
 -->
 - &#x2610; Creating own flexible trainings plans (creation of a training plan from selected exercises, their number of series and repetitions, and optionally a pre-imposed weight )<br>
 - &#x2610; History of trainings (Check statistics of already made training like ERP and optional advices from system)<br>
-- &#x2610; Dark Theme (Must have lol)<br>
+- &#x2705; Dark Theme (Must have lol)<br>
 - &#x2610; Weight changes tracker<br>
 - &#x2610; Statistics page<br>
-- &#x2610; Database with exercises (Check exercise, it's title, description, image or video how to do this exercise, advices etc.)<br><br>
+- &#x2705; Database with exercises (Check exercise, it's title, description, image or video how to do this exercise, advices etc.)<br><br>
 
 <h3 align="left"># Roadmap - Work Plans (updated when item is completed) #</h3>
 
