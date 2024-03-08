@@ -50,6 +50,7 @@
 - &#x2610; Prepare Infrastructure project (preview in draw.io) → 09-10 March<br>
 - &#x2610; Find personal trainer to get some important information for application → 11-17 March<br>
 - &#x2610; Implement creating training plans (selected specific exrcises, series, repetitions etc) → 13-20 March<br>
+- &#x2610; implement and prepare exercises database with few prepopulated data in db 
 - Other plans are now under question mark. Future updates will show next roadmap plans.
 <br>
 
