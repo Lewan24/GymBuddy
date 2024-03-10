@@ -14,4 +14,8 @@
     <string name="start_new_training_button_text">Let\'s train!</string>
     <string name="delete_Button_Text">Delete</string>
     <string name="edit_Button_Text">Edit</string>
+    <string name="fabrykasily_logo">FabrykaSily_Logo</string>
+    <string name="instruction_Video_copyright_fabrykasily">The instructional video belongs to the company www.fabrykasily.pl</string>
+    <string name="exercise_details_title_text">Exercise details</string>
+    <string name="return_btn_text">Return</string>
 </resources>

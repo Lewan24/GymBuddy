@@ -6,6 +6,7 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.MediaController
 import android.widget.TextView
 import android.widget.VideoView
@@ -26,14 +27,20 @@ class ExercisesAdapter : RecyclerView.Adapter<ExercisesAdapter.ExerciseViewHolde
     fun setViewModel(viewModel: ExercisesDbViewModel){
         this.databaseViewModel = viewModel
     }
+
     inner class ExerciseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
         View.OnLongClickListener {
         val exerciseName: TextView = itemView.findViewById(R.id.tvExerciseName)
         val exerciseLevel: TextView = itemView.findViewById(R.id.tvLevel)
         val exerciseMuscles: TextView = itemView.findViewById(R.id.tvMuscles)
+        val buttonDetails: Button = itemView.findViewById(R.id.btnDetails)
 
         init {
             itemView.setOnLongClickListener(this)
+
+            buttonDetails.setOnClickListener{
+                onLongClick(this.itemView)
+            }
         }
 
         override fun onLongClick(v: View?): Boolean {
@@ -59,10 +66,12 @@ class ExercisesAdapter : RecyclerView.Adapter<ExercisesAdapter.ExerciseViewHolde
 
             val dialog = AlertDialog.Builder(itemView.context)
                 .setView(dialogView)
-                .setTitle("Exercise Details")
-                .setPositiveButton("Ok") { dialog, _ ->
-                    dialog.dismiss()
-                }.create()
+                .create()
+
+            val buttonReturn = dialogView.findViewById<Button>(R.id.btnReturn)
+            buttonReturn.setOnClickListener{
+                dialog.dismiss()
+            }
 
             dialog.show()
 
