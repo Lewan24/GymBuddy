@@ -1,10 +1,14 @@
 package com.example.gymbuddy.data.adapters
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.MediaController
 import android.widget.TextView
+import android.widget.VideoView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gymbuddy.R
 import com.example.gymbuddy.data.entities.ExerciseModel
@@ -22,12 +26,48 @@ class ExercisesAdapter : RecyclerView.Adapter<ExercisesAdapter.ExerciseViewHolde
     fun setViewModel(viewModel: ExercisesDbViewModel){
         this.databaseViewModel = viewModel
     }
-    inner class ExerciseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class ExerciseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+        View.OnLongClickListener {
         val exerciseName: TextView = itemView.findViewById(R.id.tvExerciseName)
         val exerciseLevel: TextView = itemView.findViewById(R.id.tvLevel)
         val exerciseMuscles: TextView = itemView.findViewById(R.id.tvMuscles)
-//        val exerciseVideo: VideoView = itemView.findViewById(R.id.vvExerciseVideo)
-//        val mediaController = MediaController(itemView.context)
+
+        init {
+            itemView.setOnLongClickListener(this)
+        }
+
+        override fun onLongClick(v: View?): Boolean {
+            val position = adapterPosition
+            val todoItem = items[position]
+
+            val dialogView = LayoutInflater.from(itemView.context).inflate(R.layout.exercise_details_dialog, null)
+
+            val exerciseVideo: VideoView = dialogView.findViewById(R.id.vvExerciseVideo)
+            val mediaController = MediaController(itemView.context)
+
+            // Todo: Need to check nulls and prepare catching
+            //val videoUri: Uri? = if (todoItem.videoUrl != "") Uri.parse(todoItem.videoUrl) else null
+            val videoUri: Uri = Uri.parse(todoItem.videoUrl)
+
+            exerciseVideo.setVideoURI(videoUri)
+
+            mediaController.setAnchorView(exerciseVideo)
+            mediaController.setMediaPlayer(exerciseVideo)
+
+            exerciseVideo.setMediaController(mediaController)
+            exerciseVideo.start()
+
+            val dialog = AlertDialog.Builder(itemView.context)
+                .setView(dialogView)
+                .setTitle("Exercise Details")
+                .setPositiveButton("Ok") { dialog, _ ->
+                    dialog.dismiss()
+                }.create()
+
+            dialog.show()
+
+            return true
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
@@ -48,18 +88,5 @@ class ExercisesAdapter : RecyclerView.Adapter<ExercisesAdapter.ExerciseViewHolde
         val gson = Gson()
         val exerciseMusclesAsList: List<String> = gson.fromJson<List<String>>(currentExercise.musclesUsed, List::class.java)
         "Muscles: ${exerciseMusclesAsList.joinToString(separator = ",")}".also { holder.exerciseMuscles.text = it }
-
-        // Todo: Need to check nulls and prepare catching
-        //val videoUri: Uri? = if (currentExercise.videoUrl != "") Uri.parse(currentExercise.videoUrl) else null
-
-//        val videoUri: Uri = Uri.parse(currentExercise.videoUrl)
-//
-//        holder.exerciseVideo.setVideoURI(videoUri)
-//
-//        holder.mediaController.setAnchorView(holder.exerciseVideo)
-//        holder.mediaController.setMediaPlayer(holder.exerciseVideo)
-//
-//        holder.exerciseVideo.setMediaController(holder.mediaController)
-//        holder.exerciseVideo.start()
     }
 }
