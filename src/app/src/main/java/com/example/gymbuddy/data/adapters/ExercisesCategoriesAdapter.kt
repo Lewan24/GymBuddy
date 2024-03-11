@@ -1,6 +1,7 @@
 package com.example.gymbuddy.data.adapters
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +15,8 @@ import com.example.gymbuddy.R
 import com.example.gymbuddy.data.entities.ExerciseCategoryModel
 import com.example.gymbuddy.pages.ExercisesDbFragment
 
-class ExercisesCategoriesAdapter(private val fragmentChangeListener: FragmentChangeListener) : RecyclerView.Adapter<ExercisesCategoriesAdapter.ExerciseCategoriesViewHolder>() {
+
+class ExercisesCategoriesAdapter(private val context: Context, private val fragmentChangeListener: FragmentChangeListener) : RecyclerView.Adapter<ExercisesCategoriesAdapter.ExerciseCategoriesViewHolder>() {
 
     var items = ArrayList<ExerciseCategoryModel>()
 
@@ -41,9 +43,22 @@ class ExercisesCategoriesAdapter(private val fragmentChangeListener: FragmentCha
 
         holder.categoryName.text = currentCategory.categoryName
 
-        // TODO: Can't fetch image url // should just download images and insert into image view
-        if (currentCategory.imageUrl != null)
-            holder.categoryImage.setImageURI(Uri.parse(currentCategory.imageUrl))
+        if (currentCategory.isStaticFile != null &&
+            currentCategory.isStaticFile == "STATIC" &&
+            currentCategory.imageUrl != null)
+        {
+            val packageName = context.packageName
+
+            val field = Class.forName("$packageName.R\$drawable").getDeclaredField(currentCategory.imageUrl)
+            val imageId = field.getInt(field)
+
+            if (imageId != 0)
+                holder.categoryImage.setImageResource(imageId)
+        }
+        else{
+            if (currentCategory.imageUrl != null)
+                holder.categoryImage.setImageURI(Uri.parse(currentCategory.imageUrl))
+        }
 
         holder.btnOpenCategory.setOnClickListener{
             val exercisesFragment = ExercisesDbFragment.newInstance(currentCategory.id)

@@ -28,7 +28,7 @@
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/btnGoIntoCategory"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/ivCategoryImage"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -40,6 +40,6 @@
         android:text="@string/open_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView" />
+        app:layout_constraintStart_toEndOf="@+id/ivCategoryImage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

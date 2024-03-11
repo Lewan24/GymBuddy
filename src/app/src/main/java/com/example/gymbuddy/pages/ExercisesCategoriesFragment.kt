@@ -27,7 +27,7 @@ class ExercisesCategoriesFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         binding = FragmentExercisesCategoriesBinding.inflate(inflater, container, false)
-        exercisesCategoriesAdapter = ExercisesCategoriesAdapter(object : FragmentChangeListener {
+        exercisesCategoriesAdapter = ExercisesCategoriesAdapter(this.requireContext(), object : FragmentChangeListener {
             override fun replaceFragment(fragment: Fragment) {
                 (requireActivity() as MainActivity).replaceFragment(fragment)
             }
