@@ -13,19 +13,13 @@ import android.widget.VideoView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gymbuddy.R
 import com.example.gymbuddy.data.entities.ExerciseModel
-import com.example.gymbuddy.data.viewmodels.ExercisesDbViewModel
 import com.google.gson.Gson
 
 class ExercisesAdapter : RecyclerView.Adapter<ExercisesAdapter.ExerciseViewHolder>() {
-    private lateinit var databaseViewModel: ExercisesDbViewModel
     var items = ArrayList<ExerciseModel>()
 
     fun setListData(data: ArrayList<ExerciseModel>){
         this.items = data
-    }
-
-    fun setViewModel(viewModel: ExercisesDbViewModel){
-        this.databaseViewModel = viewModel
     }
 
     inner class ExerciseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),

@@ -8,6 +8,7 @@ import com.example.gymbuddy.data.daos.ExercisesDao
 import com.example.gymbuddy.data.daos.TrainingsDao
 import com.example.gymbuddy.data.daos.UserSettingsDao
 import com.example.gymbuddy.data.entities.ArchivedTrainingModel
+import com.example.gymbuddy.data.entities.ExerciseCategoryModel
 import com.example.gymbuddy.data.entities.ExerciseModel
 import com.example.gymbuddy.data.entities.TrainingPlanModel
 import com.example.gymbuddy.data.entities.UserSetting
@@ -16,7 +17,8 @@ import com.example.gymbuddy.data.entities.UserSetting
         [UserSetting::class,
         TrainingPlanModel::class,
         ArchivedTrainingModel::class,
-        ExerciseModel::class], version = 1)
+        ExerciseModel::class,
+        ExerciseCategoryModel::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun UserDao(): UserSettingsDao
     abstract fun ExercisesDao(): ExercisesDao

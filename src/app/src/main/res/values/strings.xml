@@ -18,4 +18,6 @@
     <string name="instruction_Video_copyright_fabrykasily">The instructional video belongs to the company www.fabrykasily.pl</string>
     <string name="exercise_details_title_text">Exercise details</string>
     <string name="return_btn_text">Return</string>
+    <string name="open_button_text">Open</string>
+    <string name="category_image_text">Category image</string>
 </resources>

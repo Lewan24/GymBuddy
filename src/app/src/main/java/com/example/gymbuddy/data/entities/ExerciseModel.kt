@@ -11,6 +11,7 @@ data class ExerciseModel(
     @ColumnInfo(name="ExerciseName") val exerciseName: String,
     @ColumnInfo(name="MusclesUsedJson") val musclesUsed: String, //List<String>
     @ColumnInfo(name="Level") val level: String, // Level as string
+    @ColumnInfo(name = "CategoryId") val categoryId: Int, // ExerciseCategory
     @ColumnInfo(name="AdvicesJson") val advices: String?, // List<String>
     @ColumnInfo(name="VideoUrl") val videoUrl: String?
 )

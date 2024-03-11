@@ -11,10 +11,10 @@ import com.example.gymbuddy.data.adapters.ExercisesAdapter
 import com.example.gymbuddy.data.viewmodels.ExercisesDbViewModel
 import com.example.gymbuddy.databinding.FragmentExercisesDbBinding
 
-class ExercisesDbFragment : Fragment() {
+class ExercisesDbFragment(private val categoryId: Int) : Fragment() {
 
     companion object {
-        fun newInstance() = ExercisesDbFragment()
+        fun newInstance(categoryId: Int) = ExercisesDbFragment(categoryId)
     }
 
     private lateinit var viewModel: ExercisesDbViewModel
@@ -28,9 +28,8 @@ class ExercisesDbFragment : Fragment() {
         exercisesAdapter = ExercisesAdapter()
 
         viewModel = ViewModelProvider(this)[ExercisesDbViewModel::class.java]
-        viewModel.getAllExercisesAsObservers().observe(viewLifecycleOwner) {
+        viewModel.getMatchedCategoryExercises(categoryId).observe(viewLifecycleOwner){
             exercisesAdapter.setListData(ArrayList(it))
-            exercisesAdapter.setViewModel(this.viewModel)
             exercisesAdapter.notifyDataSetChanged()
         }
 

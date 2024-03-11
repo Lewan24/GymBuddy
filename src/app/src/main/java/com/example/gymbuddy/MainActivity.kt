@@ -7,16 +7,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import com.example.gymbuddy.data.adapters.FragmentChangeListener
 import com.example.gymbuddy.pages.AboutUsFragment
-import com.example.gymbuddy.pages.ExercisesDbFragment
+import com.example.gymbuddy.pages.ExercisesCategoriesFragment
 import com.example.gymbuddy.pages.FigureFragment
-import com.example.gymbuddy.pages.TrainingsHistoryFragment
 import com.example.gymbuddy.pages.HomeFragment
 import com.example.gymbuddy.pages.TrainingsFragment
+import com.example.gymbuddy.pages.TrainingsHistoryFragment
 import com.example.gymbuddy.pages.WeightFragment
 import com.google.android.material.navigation.NavigationView
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
+    FragmentChangeListener {
     private lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,12 +59,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_Figure -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, FigureFragment()).commit()
             R.id.nav_ExercisesDb -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, ExercisesDbFragment()).commit()
+                .replace(R.id.fragment_container, ExercisesCategoriesFragment()).commit()
             R.id.nav_about -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, AboutUsFragment()).commit()
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    override fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 
     @Deprecated("Deprecated in Java")
