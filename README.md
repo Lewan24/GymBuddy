@@ -52,6 +52,7 @@
 - &#x2610; Implement creating training plans (selected specific exrcises, series, repetitions etc) → 13-20 March<br>
 - &#x2610; implement and prepare exercises database with few prepopulated data in db 
 - &#x2610; implement dialog for exercises details and make IT flexible to be able to open also during creating training plans, system advices and history of training
+- &#x2610; connect application with AI for user integration
 - Other plans are now under question mark. Future updates will show next roadmap plans.
 <br>
 
