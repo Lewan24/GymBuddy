@@ -8,7 +8,7 @@
 <h1 align="center">&#x1F4F2; personal training helper/tracker</h1>
 
 <br><br>
-
+ 
 <h2 align="center">Hi, I invite you to take a look at the following android app project \/</h2>
 
 > [!NOTE]
