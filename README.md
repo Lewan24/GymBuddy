@@ -61,6 +61,7 @@
 <h3 align="left"># How to run #</h3>
 <p allign="left">Actually running application is pretty easy. Just download apk file (GymBuddy.apk) from releases page (Latest stable version), then install apk on phone and enjoy :)</p>
 <p allign="left">First run could be kinda slow coz of first starting and creating database for user. Every run after the first one will be much faster.</p>
+<p>First release will be uploaded after implementing database with exercises and training plasa</p>
 <br>
 
 <h3 align="left"># Greetings #</h3>
