@@ -24,9 +24,6 @@
 <p align="left">Program will be open-sourced and free to use for anyone</p><br>
 
 <h3 align="left"># Features (Selected only most important) #</h3>
-<!-- &#x2610; checkbox empty
-     &#x2705; checkbox full green
--->
 - &#x2610; Creating own flexible trainings plans (creation of a training plan from selected exercises, their number of series and repetitions, and optionally a pre-imposed weight )<br>
 - &#x2610; History of trainings (Check statistics of already made training like ERP and optional advices from system)<br>
 - &#x2705; Dark Theme (Must have lol)<br>
